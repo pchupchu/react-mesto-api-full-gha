@@ -4,6 +4,7 @@ const { errors } = require('celebrate');
 const cors = require('cors');
 const { handleErrors } = require('./middlewares/handle-errors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const allowedOrigins = require('./utils/allowed-origins');
 
 const { PORT = 3000 } = process.env;
 
@@ -14,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
-app.use(cors());
+app.use(cors(allowedOrigins));
 app.use(requestLogger);
 
 app.get('/crash-test', () => {
