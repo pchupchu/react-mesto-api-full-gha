@@ -36,7 +36,7 @@ function App() {
     api
       .getInitialCards()
       .then((res) => {
-        setCards(res);
+        setCards(res.data);
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
@@ -47,7 +47,7 @@ function App() {
     api
       .getProfileInfo()
       .then((res) => {
-        setCurrentUser(res);
+        setCurrentUser(res.data);
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
@@ -59,7 +59,7 @@ function App() {
     api
       .setProfileInfo(user)
       .then((res) => {
-        setCurrentUser(res);
+        setCurrentUser(res.data);
         closeAllPopups();
       })
       .catch((err) => {
@@ -73,7 +73,7 @@ function App() {
     api
       .setProfileAvatar(obj.avatar)
       .then((res) => {
-        setCurrentUser(res);
+        setCurrentUser(res.data);
         closeAllPopups();
       })
       .catch((err) => {
@@ -87,7 +87,7 @@ function App() {
     api
       .setNewCard(card)
       .then((res) => {
-        setCards([res, ...cards]);
+        setCards([res.data, ...cards]);
         closeAllPopups();
       })
       .catch((err) => {
@@ -101,10 +101,8 @@ function App() {
 
     api
       .changeLikeCardStatus(card._id, !isLiked)
-      .then((newCard) => {
-        setCards((state) =>
-          state.map((c) => (c._id === card._id ? newCard : c))
-        );
+      .then(({ data }) => {
+        setCards((state) => state.map((c) => (c._id === card._id ? data : c)));
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
