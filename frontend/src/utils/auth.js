@@ -1,4 +1,4 @@
-export const BASE_URL = "http://api.mesto-pchu.nomoredomains.monster";
+export const BASE_URL = "https://api.mesto-pchu.nomoredomains.monster";
 
 function checkRes(res) {
   if (res.ok) {
