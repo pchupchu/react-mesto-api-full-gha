@@ -41,7 +41,7 @@ function App() {
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
       });
-  }, []);
+  }, [loggedIn]);
 
   useEffect(() => {
     api
@@ -52,7 +52,7 @@ function App() {
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
       });
-  }, []);
+  }, [loggedIn]);
 
   function handleUpdateUser(user) {
     setIsLoading(true);
