@@ -51,6 +51,7 @@ function App() {
         .getProfileInfo()
         .then((res) => {
           setCurrentUser(res.data);
+          setIsEmail(res.data.email);
         })
         .catch((err) => {
           console.log(`Ошибка: ${err}`);
