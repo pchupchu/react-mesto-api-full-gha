@@ -33,26 +33,30 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    api
-      .getInitialCards()
-      .then((res) => {
-        setCards(res.data);
-      })
-      .catch((err) => {
-        console.log(`Ошибка: ${err}`);
-      });
-  }, [loggedIn]);
+    if (isEmail) {
+      api
+        .getInitialCards()
+        .then((res) => {
+          setCards(res.data);
+        })
+        .catch((err) => {
+          console.log(`Ошибка: ${err}`);
+        });
+    }
+  }, [isEmail]);
 
   useEffect(() => {
-    api
-      .getProfileInfo()
-      .then((res) => {
-        setCurrentUser(res.data);
-      })
-      .catch((err) => {
-        console.log(`Ошибка: ${err}`);
-      });
-  }, [loggedIn]);
+    if (isEmail) {
+      api
+        .getProfileInfo()
+        .then((res) => {
+          setCurrentUser(res.data);
+        })
+        .catch((err) => {
+          console.log(`Ошибка: ${err}`);
+        });
+    }
+  }, [isEmail]);
 
   function handleUpdateUser(user) {
     setIsLoading(true);
