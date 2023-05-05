@@ -213,6 +213,7 @@ function App() {
 
   function signOut() {
     localStorage.removeItem("token");
+    setLoggedIn(false);
     navigate("/sign-in", { replace: true });
     setIsNavbarOpen(false);
     setIsBurger(false);
