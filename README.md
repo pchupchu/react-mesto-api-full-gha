@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.78.60
+IP 51.250.78.60
 
 Frontend https://mesto-pchu.nomoredomains.monster
 
