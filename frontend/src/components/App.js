@@ -33,7 +33,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (isEmail) {
+    if (loggedIn) {
       api
         .getInitialCards()
         .then((res) => {
@@ -43,10 +43,10 @@ function App() {
           console.log(`Ошибка: ${err}`);
         });
     }
-  }, [isEmail]);
+  }, [loggedIn]);
 
   useEffect(() => {
-    if (isEmail) {
+    if (loggedIn) {
       api
         .getProfileInfo()
         .then((res) => {
@@ -56,7 +56,7 @@ function App() {
           console.log(`Ошибка: ${err}`);
         });
     }
-  }, [isEmail]);
+  }, [loggedIn]);
 
   function handleUpdateUser(user) {
     setIsLoading(true);

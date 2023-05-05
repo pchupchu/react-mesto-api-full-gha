@@ -1,4 +1,5 @@
 export const BASE_URL = "https://api.mesto-pchu.nomoredomains.monster";
+// export const BASE_URL = "http://localhost:3000";
 
 function checkRes(res) {
   if (res.ok) {
