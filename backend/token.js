@@ -9,16 +9,21 @@ try {
   Надо исправить. В продакшне используется тот же
   секретный ключ, что и в режиме разработки.
   `);
+  console.log('\x1b[31m%s\x1b[0m', process.env.NODE_ENV);
 } catch (err) {
   if (err.name === 'JsonWebTokenError' && err.message === 'invalid signature') {
     console.log(
       '\x1b[32m%s\x1b[0m',
       'Всё в порядке. Секретные ключи отличаются',
+
+      process.env.NODE_ENV,
     );
   } else {
     console.log(
       '\x1b[33m%s\x1b[0m',
       'Что-то не так',
+
+      process.env.NODE_ENV,
       err,
     );
   }
