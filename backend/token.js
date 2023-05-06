@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const YOUR_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU2MjlhMWIzZTJlNTZiMzk4ZTlkYWEiLCJpYXQiOjE2ODMzNjgzNTksImV4cCI6MTY4Mzk3MzE1OX0.PbulK_1V_ZqYVordV5bqHlw4pjaRcJAlE5aeZSur7Vw';
+const YOUR_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU2OGQ0N2ExNDliZmU3ZjBkYWMwOTQiLCJpYXQiOjE2ODMzOTM4NjksImV4cCI6MTY4Mzk5ODY2OX0.7-T1jLvF33gVKPF9WBc47jakRVgIN5HiwfGJZsQG2YM';
 const SECRET_KEY_DEV = 'super-strong-secret';
 
 try {
